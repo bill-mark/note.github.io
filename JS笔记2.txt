@@ -1,0 +1,124 @@
+1. Math属于静态方法，可以不要声明直接调用，而date属于动态的，需要提前new一个对象
+
+2.js遇到非法运算，会理解为数字拼接
+   例如  2+3+'aa'+5+6
+   结果为 5aa56
+
+3.js逻辑运算返回的是最早能得到结果的值
+  var a=false;
+var b=6;
+var c=true;
+
+  (a ||b||c)
+6
+  所以 浏览器兼容可以这么用 window.hello = window.hello(wenkit) || window.word(ie)
+
+4.null 对象未定义
+ underfine   字符串未定义
+
+5.循环输出一个对象的属性和属性值
+var obj = {
+
+name:'lisi',
+
+age:29,
+
+area:'bj'
+};
+
+for(var key in obj){
+ 
+console.log(key+':'+obj[key]);
+
+}
+
+ name:lisi
+
+ age:29
+
+area:bj
+
+6.数组通过join（）转字符串，字符串通过split()转数组。
+
+7.  var 是声明变量
+    str = 'ff'  直接用=属于赋值，会一直找str,找到第一个就赋值并停止往后赋值，会一直找到window，window 有则直接赋值，没有先声明再赋值。
+  window.str='ff';
+
+function t1(){
+  
+function t2(){
+  
+  str ='japan';
+     
+  console.log(str);
+      
+ }
+    
+   t2();
+}
+
+   t1();
+
+console.log(window.str);
+
+结果  japan
+      japan
+
+window.str='ff';
+
+function t1(){
+ 
+var str='dd'
+function t2(){
+  
+  str ='japan';
+     
+  console.log(str);
+      
+ }
+    
+   t2();
+}
+
+   t1();
+
+console.log(window.str);
+
+结果  japan
+      ff
+
+
+8.DOM中元素间的空白也算节点。
+ <div id="dd1">
+   	   <p>1</p>
+   	   <p>2</p>
+   	   <p>3</p>
+   </div>
+alert(document.getElementById('dd1').childNodes.length);
+结果 7
+ 可使用浏览器都支持的children
+alert(document.getElementById('dd1').children.length);
+结果 3
+
+14.写在标签里的style才能被dom操作，写在样式里的不可以。
+  操作css属性要通过style
+
+15.函数传参数是这么用的
+  <span class="li-word" onclick="showmenu2('5')"
+  直接写死了
+16.图片旋转 以4次为一个周期进行循环
+ var rot=0;
+function changImg(){
+  var src2 = document.getElementById("rimg2");
+  rot +=1;
+  src2.className="rImg2-"+rot;
+  if(rot==3){
+  	rot=-1;
+  }
+}
+
+
+
+
+
+
