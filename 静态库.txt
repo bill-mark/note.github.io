@@ -1,3 +1,0 @@
-http://www.bootcdn.cn/bootstrap/
-
-通过引入静态库方便开发
